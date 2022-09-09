@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "admin@admin.com.br"
+      PGADMIN_DEFAULT_PASSWORD: "Pgadmin@2022"
+    ports:
+      - "16543:80"
+    networks:
+      - postgres-network
+
+networks:
+  postgres-network:
+    driver: bridge
